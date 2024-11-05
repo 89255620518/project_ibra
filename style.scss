@@ -1,0 +1,278 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.product-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    &__textH {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+        &_h1 {
+            font-family: "Lato", sans-serif;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 36px;
+            color: rgba(34, 34, 34, 1);
+        }
+
+        &_p {
+            font-family: "Lato", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.8px;
+            color: rgba(159, 159, 159, 1);
+        }
+    }
+
+    &__cards {
+        display: grid;
+        gap: 20px;
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        animation: cards 4.0s ease-in-out forwards;
+        @keyframes cards {
+            0% {
+                // transform: translate(-50%, 50%);
+                transform: rotate3d(10, 20, 1, 100deg);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+        
+        &_card {
+            background: rgba(248, 248, 248, 1);
+            position: relative;
+            z-index: 1;
+            p
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+
+
+            &_button {
+                position: absolute;
+                z-index: 2;
+                width: 40%;
+                height: 7%;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: row-reverse;
+                color: rgb(23, 1, 46);
+                border: 2px solid rgb(28, 3, 58);
+                font-size: 35px;
+                font-family: "Lato", sans-serif;
+
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid red;
+                    color: red;
+                }
+            }
+
+            &_img {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                // &:hover {
+                //     cursor: pointer;
+                //     opacity: 0.2;
+                // }
+            }
+
+            &_text {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                &_h1 {
+                    font-family: "Lato", sans-serif;
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 15.6px;
+                    text-align: left;
+                    color: rgba(0, 0, 0, 1);
+                }
+
+                &_p {
+                    font-family: "Lato", sans-serif;
+                    font-size: 14px;
+                    font-weight: 300;
+                    line-height: 16.8px;
+                    text-align: left;
+                    color: rgba(93, 93, 93, 1);
+                }
+
+                &_price {
+                    font-family: "Lato", sans-serif;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 19.2px;
+                    text-align: left;
+                    color: rgba(241, 109, 127, 1);
+                }
+            }
+        }
+    }
+
+    &__button {
+        width: 212px;
+        height: 48px;
+        font-family: Lato;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.2px;
+        text-align: center;
+        color: rgba(242, 99, 118, 1);
+        border: 1px solid rgba(255, 106, 106, 1);
+        background-color: aliceblue;
+        &:hover {
+            cursor: pointer;
+            background-color: gray;
+            color: antiquewhite;
+        }
+    }
+}
+
+.cart {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.storage {
+    display: grid;
+    gap: 50px;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    margin: 30px 0;
+    padding: 40px;
+    
+
+    &__card {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        @keyframes slide {
+            0% {
+                transform: skewX(114deg);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+            
+        &_img {
+            width: 40%;
+        }
+
+        &_info {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 20px;
+
+            &_name {
+                font-family: "Lato", sans-serif;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 28.8px;
+                text-align: left;
+            }
+
+            &_text {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            
+
+                &_p {
+                    font-family: "Lato", sans-serif;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 26.4px;
+                    text-align: left;
+                    color: rgba(87, 87, 87, 1);
+                    display: flex;
+                    gap: 10px;
+
+                    &_span {
+                        color: rgba(239, 91, 112, 1);
+                    }
+
+                    &_input {
+                        font-family: "Lato", sans-serif;
+                        font-size: 16px;
+                        text-align: center;
+                        width: 44px;
+                        height: 25px;
+                        border: 1px solid rgba(234, 234, 234, 1);
+                        margin: 0 0 0 20px;
+                    }
+                }
+            }
+        }
+
+        &_close {
+            display: none;
+            padding: 8px;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+.storage .product-items__cards_card {
+    transition: 0.5s;
+    
+} 
+
+.storage .product-items__cards_card_button {
+    opacity: 0;
+}
+
+
+
+.danger {
+    box-shadow: 0 10px 10px red;
+    transform: translate(0, -10px);   
+}
+
+.draft {
+    display: none;
+}
+
+
+
+.name {
+    font-size: 40px;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+}
+
+
+

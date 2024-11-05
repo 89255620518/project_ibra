@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.product-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.product-items__textH {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.product-items__textH_h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  color: rgb(34, 34, 34);
+}
+.product-items__textH_p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: rgb(159, 159, 159);
+}
+.product-items__cards {
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+  animation: cards 4s ease-in-out forwards;
+}
+@keyframes cards {
+  0% {
+    transform: rotate3d(10, 20, 1, 100deg);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+.product-items__cards_card {
+  background: rgb(248, 248, 248);
+  position: relative;
+  z-index: 1;
+}
+p .product-items__cards_card:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.product-items__cards_card_button {
+  position: absolute;
+  z-index: 2;
+  width: 40%;
+  height: 7%;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  color: rgb(23, 1, 46);
+  border: 2px solid rgb(28, 3, 58);
+  font-size: 35px;
+  font-family: "Lato", sans-serif;
+}
+.product-items__cards_card_button:hover {
+  cursor: pointer;
+  border: 2px solid red;
+  color: red;
+}
+.product-items__cards_card_img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.product-items__cards_card_text {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.product-items__cards_card_text_h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 15.6px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+}
+.product-items__cards_card_text_p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16.8px;
+  text-align: left;
+  color: rgb(93, 93, 93);
+}
+.product-items__cards_card_text_price {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  color: rgb(241, 109, 127);
+}
+.product-items__button {
+  width: 212px;
+  height: 48px;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: center;
+  color: rgb(242, 99, 118);
+  border: 1px solid rgb(255, 106, 106);
+  background-color: aliceblue;
+}
+.product-items__button:hover {
+  cursor: pointer;
+  background-color: gray;
+  color: antiquewhite;
+}
+
+.cart {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.storage {
+  display: grid;
+  gap: 50px;
+  grid-template: repeat(2, 1fr)/repeat(3, 1fr);
+  margin: 30px 0;
+  padding: 40px;
+}
+.storage__card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+@keyframes slide {
+  0% {
+    transform: skewX(114deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.storage__card_img {
+  width: 40%;
+}
+.storage__card_info {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 20px;
+}
+.storage__card_info_name {
+  font-family: "Lato", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  text-align: left;
+}
+.storage__card_info_text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.storage__card_info_text_p {
+  font-family: "Lato", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.4px;
+  text-align: left;
+  color: rgb(87, 87, 87);
+  display: flex;
+  gap: 10px;
+}
+.storage__card_info_text_p_span {
+  color: rgb(239, 91, 112);
+}
+.storage__card_info_text_p_input {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  width: 44px;
+  height: 25px;
+  border: 1px solid rgb(234, 234, 234);
+  margin: 0 0 0 20px;
+}
+.storage__card_close {
+  display: none;
+  padding: 8px;
+}
+.storage__card_close:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.storage .product-items__cards_card {
+  transition: 0.5s;
+}
+
+.storage .product-items__cards_card_button {
+  opacity: 0;
+}
+
+.danger {
+  box-shadow: 0 10px 10px red;
+  transform: translate(0, -10px);
+}
+
+.draft {
+  display: none;
+}
+
+.name {
+  font-size: 40px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+}/*# sourceMappingURL=style.css.map */
