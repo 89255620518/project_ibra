@@ -11,28 +11,96 @@
 </head>
 <body>
     
-    <div class="product-items">
-        <div class="product-items__textH">
-            <h1 class="product-items__textH_h1">Fetured Items</h1>
-            <p class="product-items__textH_p">Shop for items based on what we featured in this week</p>
+    <div class="container center">
+        <div class="product-items">
+            <div class="product-items__textH">
+                <h1 class="product-items__textH_h1">Fetured Items</h1>
+                <p class="product-items__textH_p">Shop for items based on what we featured in this week</p>
+            </div>
+    
+            <div class="product-items__cards"></div>
+    
+            <button class="product-items__button">Browse All Product</button>
         </div>
 
-        <div class="product-items__cards"></div>
-
-        <button class="product-items__button">Browse All Product</button>
-    </div>
-
-    <div id="cart_id" class="cart">
-        <div class="name">Корзина:</div>
+        
+    
         <div class="draft"></div>
-        <div class="storage">
-            
+    
+        <div id="cart_id" class="cart" >
+            <h1 class="name">Корзина:</h1>
+            <div class="storage"></div>
+        </div>
+    </div>
+
+    <div class="comment-container">
+        <div class="comment-container__overlay">
+
+            <div class="comment-product" data-target ="1">
+                <div class="comment-product__list" data-list="1">
+                    <ul></ul>
+                </div>
+
+                <input class="comment-product__form_input" data-input="1" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "1">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
+        
+            <div class="comment-product" data-target ="2">
+                <ul class="comment-product__list" data-list="2">
+        
+                </ul>
+                <input class="comment-product__form_input" data-input="2" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "2">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
+        
+            <div class="comment-product" data-target ="3">
+                <ul class="comment-product__list" data-list="3">
+        
+                </ul>
+                <input class="comment-product__form_input" data-input="3" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "3">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
+        
+            <div class="comment-product" data-target ="4">
+                <ul class="comment-product__list" data-list="4">
+        
+                </ul>
+                <input class="comment-product__form_input" data-input="4" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "4">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
+        
+            <div class="comment-product" data-target ="5">
+                <ul class="comment-product__list" data-list="5">
+        
+                </ul>
+                <input class="comment-product__form_input" data-input="5" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "5">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
+        
+            <div class="comment-product" data-target ="6">
+                <ul class="comment-product__list" data-list="6">
+        
+                </ul>
+                <input class="comment-product__form_input" data-input="6" type="text" placeholder="Оставьте отзыв о продукте">
+                <button type="submit" class="comment-product__form_button" data-but = "6">Оставить отзыв</button>
+                <button class="comment-product__form_button" id="closed">Зыкрыть</button>
+            </div>
         </div>
     </div>
 
 
+    
+    
 
+    
     <script src="script.js"></script>
+    <script src="comment.js"></script>
+    
     <!-- <script src="dataCard.js"></script> -->
 </body>
 </html>

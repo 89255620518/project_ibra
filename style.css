@@ -1,7 +1,20 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+.center {
+  padding-left: calc(50% - 500px);
+  padding-right: calc(50% - 500px);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .product-items {
@@ -10,6 +23,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 50px;
+  padding: 40px;
 }
 .product-items__textH {
   display: flex;
@@ -50,7 +64,7 @@
   position: relative;
   z-index: 1;
 }
-p .product-items__cards_card:hover {
+.product-items__cards_card:hover {
   cursor: pointer;
   opacity: 0.5;
 }
@@ -68,7 +82,6 @@ p .product-items__cards_card:hover {
   flex-direction: row-reverse;
   color: rgb(23, 1, 46);
   border: 2px solid rgb(28, 3, 58);
-  font-size: 35px;
   font-family: "Lato", sans-serif;
 }
 .product-items__cards_card_button:hover {
@@ -104,6 +117,15 @@ p .product-items__cards_card:hover {
   text-align: left;
   color: rgb(93, 93, 93);
 }
+.product-items__cards_card_text_PriceComment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-items__cards_card_text_Comment {
+  display: flex;
+  flex-direction: row-reverse;
+}
 .product-items__cards_card_text_price {
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -111,6 +133,24 @@ p .product-items__cards_card:hover {
   line-height: 19.2px;
   text-align: left;
   color: rgb(241, 109, 127);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.product-items__cards_card_text_price_count {
+  display: flex;
+  flex-direction: row-reverse;
+  color: rgb(241, 109, 127);
+}
+.product-items__cards_card_text_price_gif {
+  opacity: 0.5;
+}
+.product-items__cards_card_text_price_gif:hover {
+  cursor: pointer;
+  opacity: 1;
+  width: 50px;
+  height: 50px;
 }
 .product-items__button {
   width: 212px;
@@ -134,14 +174,12 @@ p .product-items__cards_card:hover {
   display: none;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .storage {
   display: grid;
   gap: 50px;
   grid-template: repeat(2, 1fr)/repeat(3, 1fr);
-  margin: 30px 0;
   padding: 40px;
 }
 .storage__card {
@@ -157,11 +195,7 @@ p .product-items__cards_card:hover {
     transform: translateX(0);
   }
 }
-.storage__card_img {
-  width: 40%;
-}
 .storage__card_info {
-  width: 55%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -170,7 +204,6 @@ p .product-items__cards_card:hover {
 }
 .storage__card_info_name {
   font-family: "Lato", sans-serif;
-  font-size: 24px;
   font-weight: 400;
   line-height: 28.8px;
   text-align: left;
@@ -182,7 +215,6 @@ p .product-items__cards_card:hover {
 }
 .storage__card_info_text_p {
   font-family: "Lato", sans-serif;
-  font-size: 22px;
   font-weight: 400;
   line-height: 26.4px;
   text-align: left;
@@ -195,7 +227,6 @@ p .product-items__cards_card:hover {
 }
 .storage__card_info_text_p_input {
   font-family: "Lato", sans-serif;
-  font-size: 16px;
   text-align: center;
   width: 44px;
   height: 25px;
@@ -207,6 +238,79 @@ p .product-items__cards_card:hover {
   padding: 8px;
 }
 .storage__card_close:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.comment-container__overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.comment-container__overlay_visible {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
+}
+
+.comment-product {
+  display: none;
+  width: 650px;
+  height: 400px;
+  border: 10px solid #4A148C;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+  left: -999999px;
+  background-color: white;
+  gap: 20px;
+}
+.comment-product_visible {
+  display: flex;
+  left: initial;
+}
+.comment-product__list {
+  border: 1px solid;
+  width: 90%;
+  height: 300px;
+  padding: 10px 35px 0;
+  position: sticky;
+  overflow: overlay;
+}
+.comment-product__form {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.comment-product__form_input {
+  border: 1px solid;
+  width: 90%;
+  padding: 5px;
+  padding-left: 30px;
+  background-image: url("https://www.prospectsoft.com/images/security/shield2.svg");
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 500px;
+}
+.comment-product__form_button {
+  width: 29%;
+  background: yellow;
+}
+.comment-product__form_button:hover {
   cursor: pointer;
   opacity: 0.5;
 }
