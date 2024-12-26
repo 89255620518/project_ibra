@@ -568,6 +568,30 @@ itemButtonElem.addEventListener('click', function () {
                 });
             });
         });
+
+        let counter1 = localStorage.getItem('counter1') ? parseInt(localStorage.getItem('counter1')) : 0;
+        const count1 = document.querySelector('[data-count="1"]');
+        count1.textContent = counter1;
+
+        let counter2 = localStorage.getItem('counter2') ? parseInt(localStorage.getItem('counter2')) : 0;
+        const count2 = document.querySelector('[data-count="2"]');
+        count2.textContent = counter2;
+
+        let counter3 = localStorage.getItem('counter3') ? parseInt(localStorage.getItem('counter3')) : 0;
+        const count3 = document.querySelector('[data-count="3"]');
+        count3.textContent = counter3;
+
+        let counter4 = localStorage.getItem('counter4') ? parseInt(localStorage.getItem('counter4')) : 0;
+        const count4 = document.querySelector('[data-count="4"]');
+        count4.textContent = counter4;
+
+        let counter5 = localStorage.getItem('counter5') ? parseInt(localStorage.getItem('counter5')) : 0;
+        const count5 = document.querySelector('[data-count="5"]');
+        count5.textContent = counter5;
+
+        let counter6 = localStorage.getItem('counter6') ? parseInt(localStorage.getItem('counter6')) : 0;
+        const count6 = document.querySelector('[data-count="6"]');
+        count6.textContent = counter6;
     });
 });
 
@@ -583,6 +607,9 @@ addLocalStorage(itemlist5, localLists5);
 localStorage.setItem('Продукт5', JSON.stringify(localLists5));
 addLocalStorage(itemlist6, localLists6);
 localStorage.setItem('Продукт6', JSON.stringify(localLists6));
+let string = 'counter1';
+localStorage.setItem(string, counter1.toString())
+
 
 function Remove($key) {
     let listCars = document.querySelectorAll('.storage .storage__card');
